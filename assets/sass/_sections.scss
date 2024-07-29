@@ -449,7 +449,7 @@
         width: 100%;
         border-radius: 5px !important;
         &::placeholder{
-          color: $gray_3 !important;
+          color: $gray_2 !important;
         }
       }
       textarea{
@@ -471,7 +471,7 @@
     align-items: center;
     .div-text{
       p{
-        color: $gray_2;
+        color: $gray_3;
         font-size: 0.9rem;
         line-height: 2;
       }
