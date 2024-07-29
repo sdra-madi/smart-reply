@@ -1,12 +1,12 @@
 window.addEventListener("scroll", function () {
-    const header = document.querySelector(".nav-header");
+    const header = document.querySelector(".header");
     const headerMobile = document.querySelector(".nav-header-mobile");
     if (window.scrollY > 100) {
-      header.classList.add("is-sticky");
-      headerMobile.classList.add("is-sticky");
+      header.classList.add("headerDark");
+      headerMobile.classList.add("headerDark");
     } else {
-      header.classList.remove("is-sticky");
-      headerMobile.classList.remove("is-sticky");
+      header.classList.remove("headerDark");
+      headerMobile.classList.remove("headerDark");
     }
   });
   

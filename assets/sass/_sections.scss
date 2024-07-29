@@ -1,7 +1,15 @@
 // start section header 
-header {
-  background: $blue;
+.header {
+  background: transparent;
   width: 100%;
+  transition: all 0.4s ease-in-out;
+  &.headerDark{
+    background: $blue;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+  }
   .logo {
     position: relative;  
     img {
@@ -296,10 +304,13 @@ header {
 // start section intro
 .intro{
   background: $gray;
-  min-height: calc(100vh - 90px);
+  min-height: calc(100vh);
   overflow: hidden;
   position: relative;
+  margin-top: -90px;
   z-index: 1;
+  display: flex;
+  align-items: center;
   .row{
     align-items: center;
   }

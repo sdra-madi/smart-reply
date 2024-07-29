@@ -79,11 +79,19 @@ body{
         }
     } 
   }
-#myBtn{
-    background: $blue_2;
-    color: $white;
+  #myBtn{
+    background: $primary;
+    padding: 10px;
+    font-size: 20px;
     position: fixed;
-    bottom: 10;
-    right: 10;
+    right: 15px;
+    bottom: 20px;
+    border: 1px solid $primary;
+    transition: all 0.4s;
+    color: #fff;
     border-radius: 5px;
-}
+    z-index: 9999;
+    &:hover{
+      opacity: 0.7;
+    }
+  }
