@@ -49,13 +49,13 @@ body{
 }
 .dark{
     background: $blue;
-    color: $white !important;
+    color: $gray_3 !important;
     h2{
-        color: $white;
+        color: $gray_3;
         padding: 20px 0;
     }
     p{
-        color: $white;
+        color: $gray_3;
     }
 }
 .logo {
