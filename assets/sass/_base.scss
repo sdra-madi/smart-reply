@@ -82,14 +82,14 @@ body{
         }
     } 
   }
-  #myBtn{
-    background: $sec;
+#myBtn{
+    background: $secondary;
     padding: 10px;
     font-size: 20px;
     position: fixed;
     right: 15px;
     bottom: 20px;
-    border: 1px solid $sec;
+    border: 1px solid $secondary;
     transition: all 0.4s;
     color: #fff;
     border-radius: 5px;
@@ -97,4 +97,17 @@ body{
     &:hover{
       opacity: 0.7;
     }
-  }
+}
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: $primary;
+}
+::-webkit-scrollbar-thumb {
+    background-color: $secondary;
+    transition: all 0.4s;
+}
+::-webkit-scrollbar-thumb:hover {
+    opacity: 0.7;
+}

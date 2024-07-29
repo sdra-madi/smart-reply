@@ -564,7 +564,7 @@ footer {
       li{
         list-style-type: none;
         a{
-          color: $blue;
+          color: $blue !important;
           font-size: 1rem;
           margin: 5px;
           :hover{
