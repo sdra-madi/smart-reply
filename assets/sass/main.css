@@ -12019,7 +12019,7 @@ body {
   font-size: 0.8rem;
   width: 60%;
   margin: 10px auto;
-  color: #ddd !important;
+  color: #7dac18;
 }
 
 .dark {
@@ -12084,7 +12084,7 @@ body {
   height: 100%;
   left: 0;
   bottom: 0;
-  z-index: 999;
+  z-index: 99999;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12304,6 +12304,7 @@ textarea:active {
   height: 65px;
   align-items: center;
   padding: 0 2rem;
+  background-color: rgba(125, 172, 24, 0.95);
 }
 .nav-header-mobile.headerDark .humbrger i {
   color: #fff;
@@ -12356,6 +12357,16 @@ textarea:active {
   visibility: hidden;
   opacity: 0;
   transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+.nav-mobile-content .lang a {
+  color: #fff !important;
+  border: none !important;
+  border-radius: 0 !important;
+  transition: all 0.4s;
+}
+.nav-mobile-content .lang a:hover {
+  color: #ddd !important !important;
+  border: none !important;
 }
 .nav-mobile-content.show {
   visibility: visible;
@@ -12523,8 +12534,91 @@ textarea:active {
   font-weight: 500;
 }
 .services .service-box .div-text p {
-  color: #ddd !important;
+  color: #7dac18;
   font-size: 0.8rem;
+}
+
+.products {
+  padding: 40px 0;
+}
+.products .row {
+  justify-content: center;
+}
+.products .feat {
+  background: #ddd !important;
+  border-radius: 5px;
+  text-align: center;
+  overflow: hidden;
+}
+.products .feat .spanTop {
+  background: #353e4a;
+  color: #fff;
+  padding: 10px;
+}
+.products .feat .div-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(125, 172, 24, 0.95);
+}
+.products .feat .div-header img {
+  width: 60%;
+  margin: 10px auto;
+}
+.products .feat .div-header .div-text-pric {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.products .feat .div-header .div-text-pric .praice {
+  background: rgba(125, 172, 24, 0.95);
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ddd !important;
+  margin: 10px 0;
+  font-size: 1.25rem;
+}
+.products .feat .div-header .div-text-pric .spanText {
+  color: rgba(125, 172, 24, 0.95);
+  letter-spacing: 2px;
+}
+.products .feat .div-content ul {
+  text-align: start;
+  margin: 0 !important;
+  padding: 0 30px !important;
+}
+.products .feat .div-content ul li {
+  font-size: 0.8rem;
+  list-style-type: none;
+  position: relative;
+  margin: 10px 0;
+}
+.products .feat .div-content ul li::after {
+  content: "✓";
+  position: absolute;
+  top: 0;
+  left: -15px;
+  color: rgba(125, 172, 24, 0.95);
+}
+.products .feat .div-content button {
+  padding: 5px 10px;
+  margin: 10px 0;
+  font-size: 0.9rem;
+}
+.products .feat[data-type=standard] .spanTop {
+  background: #00cdfc;
+}
+.products .feat[data-type=extended] .spanTop {
+  background: #ffdd00;
+}
+.products .feat[data-type=premium] .spanTop {
+  background: #e40353;
 }
 
 .contactUs .container {
@@ -12690,4 +12784,10 @@ textarea:active {
 .footer .copyRight {
   padding: 20px 0;
   border-top: 1px solid #7dac18;
+}
+
+@media (max-width: 800px) {
+  .footer .links {
+    flex-direction: row;
+  }
 }/*# sourceMappingURL=main.css.map */
