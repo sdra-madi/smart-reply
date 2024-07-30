@@ -372,8 +372,41 @@
           </div>
         </div>
       </footer>
-    <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-circle"></i></button>
-    <div class="overlay" id="overlay"><span class="loader"></span></div>
+      <!-- Button trigger modal -->
+      <div class="book">
+        <button type="button" class="btnMy btnMy-blue btn-external" data-bs-toggle="modal" data-bs-target="#exampleModal">
+          <i class="bi bi-sliders2"></i>
+        </button>
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 fw-normal" id="exampleModalLabel">Settings</h1>
+                
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>Choose the themes that are right for you</p>
+              <div>
+                <ul>
+                  <li class="primary-1 active" id="primary-1" ></li>
+                  <li class="primary-2" id="primary-2" ></li>
+                  <li class="primary-3" id="primary-3" ></li>
+                  <li class="primary-4" id="primary-4" ></li>
+                </ul>
+              </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btnMy btnMy-blue" data-bs-dismiss="modal">Close</button>
+            </div>
+            </div>
+        </div>
+        </div>
+      </div>
+      <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="bi bi-arrow-up-circle"></i></button>
+      <div class="overlay" id="overlay"><span class="loader"></span></div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
     </script>

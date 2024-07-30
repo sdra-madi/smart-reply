@@ -180,3 +180,82 @@ textarea:active {
   background-color: $primary;
   color: $secMy;
 }
+.book{
+  z-index: 99999;
+  position: absolute;
+  text-align: center;
+  .btn-external{
+    position: fixed;
+    bottom: 10%;
+    left: -10px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+  }
+  
+  .btn-book {
+    margin-top: 30px;
+    max-width: 400px;
+    width: 100%;
+  }
+  .modal-body{
+    div{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      ul{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        list-style: none;
+        margin: 20px 0;
+        padding: 0;
+        li{
+          width: 30px;
+          height: 30px;
+          background: black;
+          margin: 0 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          &:hover{
+            opacity: 0.7;
+          }
+          &.active{
+            position: relative;
+            &::after{
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              width: 150%;
+              height: 150%;
+              transform: translate(-50% , -50%);
+              border: 2px solid black;
+              content: '';
+              border-radius: 5px;
+            }
+          }
+        }
+        .primary-1{
+          background: #7dac18;
+        }
+        .primary-2{
+          background: #4b0110;
+        }
+        .primary-3{
+          background: #1c768f;
+        }
+        .primary-4{
+          background: #ea2340;
+        }
+      }
+      }
+    }
+  }
+@media(max-width:700px){
+  .modal-body{
+    div{
+      flex-direction: column;
+      padding: 0;
+    }
+  } 
+}

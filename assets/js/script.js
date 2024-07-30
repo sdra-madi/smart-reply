@@ -54,3 +54,7 @@ window.addEventListener("load", function () {
         loader.style.display = "none";
     }
 });
+
+document.getElementById('primary-1').addEventListener('click', function(){
+  
+});
