@@ -3,9 +3,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Great+Vibes&display=swap');
 // Include any default variable overrides here (though functions won't be available)
 @import "../../node_modules/bootstrap/scss/bootstrap";
-// Option A: Include all of Bootstrap
 @import "./variables";
-
+// Option A: Include all of Bootstrap
 // Main SCSS
 
 @import "./base";

@@ -12,7 +12,7 @@ a{
 }
 body{
     // min-height: 3000px;
-    background: #f6f6f6;
+    background: $secMy;
 }
 .btnMy{
     padding: 10px 20px;
@@ -24,8 +24,8 @@ body{
     opacity: 0.7 !important;
 }
 .btnMy-blue{
-    background: $blue_2;
-    border-color: $blue_2;
+    background: $primary;
+    border-color: $primary;
     color: $white;
 }
 .btnMy-blue:hover{
@@ -38,58 +38,58 @@ body{
         font-size: 4rem;
         letter-spacing: 0px !important;
         font-weight: bold;
-        color: $blue;
+        color: $primary;
     }
     p{
         font-size: 0.8rem;
         width: 60%;
         margin: 10px auto;
-        color: $gray_2;
+        color: $secMy;
     }
 }
 .dark{
-    background: $blue;
-    color: $gray_3 !important;
+    background: $primary;
+    color: $secMy !important;
     h2{
-        color: $gray_3;
+        color: $secMy;
         padding: 20px 0;
     }
     p{
-        color: $gray_3;
+        color: $secMy;
     }
 }
-.logo {
-    position: relative;  
-    img {
-      height: 40px;
-    }
-    a{
-      color: $white;
-      font-family: "Great Vibes", cursive;
-      font-size: 2.5rem;
-      &:hover{
-        color: $blue_2;
+// .logo {
+//     position: relative;  
+//     img {
+//       height: 40px;
+//     }
+//     a{
+//       color: $white;
+//       font-family: "Great Vibes", cursive;
+//       font-size: 2.5rem;
+//       &:hover{
+//         color: $secMy;
+//       }
+//     }
+//   }
+@media (max-width: 1000px){
+  .heading{
+      h2{
+          font-size: 2rem !important;
       }
-    }
-  }
-  @media (max-width: 1000px){
-    .heading{
-        h2{
-            font-size: 2rem !important;
-        }
-        p{
-            width: 80% !important;
-        }
-    } 
-  }
+      p{
+          width: 80% !important;
+      }
+  } 
+}
 #myBtn{
-    background: $secondary;
+    background: $primary;
     padding: 10px;
     font-size: 20px;
     position: fixed;
     right: 15px;
     bottom: 20px;
-    border: 1px solid $secondary;
+    border: 1px solid $primary;
     transition: all 0.4s;
     color: #fff;
     border-radius: 5px;
@@ -105,7 +105,7 @@ body{
     background-color: $primary;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: $secondary;
+    background-color: $secMy;
     transition: all 0.4s;
 }
 ::-webkit-scrollbar-thumb:hover {
@@ -127,7 +127,7 @@ body{
   .loader {
     width: 48px;
     height: 48px;
-    border: 3px dotted $secondary;
+    border: 3px dotted $primary;
     border-style: solid solid dotted dotted;
     border-radius: 50%;
     display: inline-block;
@@ -168,4 +168,15 @@ body{
     100% {
       transform: rotate(-360deg);
     }
-  } 
+  }
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+    box-shadow: 0 0 5px 2px $primary !important;
+    border-color: $primary !important;
+}
+::selection {
+  background-color: $primary;
+  color: $secMy;
+}

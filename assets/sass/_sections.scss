@@ -3,13 +3,6 @@
   background: transparent;
   width: 100%;
   transition: all 0.4s ease-in-out;
-  &.headerDark{
-    background: $blue;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 9999;
-  }
   .logo {
     position: relative;  
     img {
@@ -19,8 +12,9 @@
       color: $white;
       font-family: "Great Vibes", cursive;
       font-size: 2.5rem;
+      transition: $transition_4;
       &:hover{
-        color: $blue_2;
+        color: $primary !important;
       }
     }
   }
@@ -42,10 +36,10 @@
           color: $white !important;
           border: 1px solid $white;
           border-radius: 5px;
-
+          transition: $transition_4;
           &:hover{
-            color: $blue_2 !important;
-            border: 1px solid $blue_2;
+            color: $primary !important;
+            border: 1px solid $primary;
           }
         }
       }
@@ -70,11 +64,11 @@
           a {
             padding: 0.9rem;
             color: $white;
-            transition: 0.3s;
+            transition: $transition_4;
             // font-size: 0.91rem;
             &:hover,
             &.active {
-              color: $blue_2 !important;
+              color: $primary !important;
             }
           }
           &:hover ul {
@@ -86,27 +80,35 @@
       }
     }
   }
-  &.header-portal {
-    .nav-header {
-      .logo-dark{
-        display: none;
-      }
-      .logo-white{
-        display: block;
-      }
-      .nav-details {
-        .nav-content {
-          li {
-            a {
-              color: $white;
-            }
-          }
+  &.headerDark{
+    background: $primary;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    .lang{
+      a{
+        color: $white !important;
+        border: 1px solid $white;
+        border-radius: 5px;
+        transition: $transition_4;
+        &:hover{
+          color: $secMy !important;
+          border: 1px solid $secMy;
         }
       }
     }
-    .humbrger {
-      i {
-        color: $white;
+    .nav-details {
+      .nav-content {
+        li {
+          a {
+            color: $white;
+            &:hover,
+            &.active {
+              color: $secMy ;
+            }
+          }
+        }
       }
     }
   }
@@ -129,18 +131,18 @@
       height: 40px;
     }
     a{
-      color: $blue_2 !important;
+      color: $secMy !important;
       font-family: "Great Vibes", cursive;
       font-size: 1rem;
       &:hover{
-        color: $blue_2;
+        color: $secMy;
       }
     }
   }
   .humbrger {
     cursor: pointer;
     i {
-      color: $blue_2;
+      color: $secMy;
       width: 100%;
       font-size: 2rem;
     }
@@ -154,7 +156,7 @@
     z-index: 999;
     -webkit-box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
     box-shadow: 0 7px 13px 0 rgba(0, 0, 0, 0.1);
-    background-color: $blue !important;
+    background-color: $primary$blue !important;
     width: 100%;
     -webkit-animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
     animation: 500ms ease-in-out 0s normal none 1 running fadeInDown;
@@ -214,7 +216,7 @@
   width: 100%;
   min-height: 100vh;
   z-index: 99999;
-  background-color: rgba($blue, 0.95);
+  background-color: rgba($primary, 0.95);
   width: 100%;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.09);
   -webkit-transform: translate(-200px, 0);
@@ -255,7 +257,7 @@
         transition: 0.3s;
         &:hover,
         &.active {
-          color: $blue_2 !important;
+          color: $secMy !important;
         }
       }
       [dir="rtl"] & button {
@@ -274,7 +276,7 @@
           }
           &.active {
             a {
-              color: $blue_2 !important;
+              color: $secMy !important;
             }
           }
           [dir="rtl"] & {
@@ -304,7 +306,9 @@
 }
 // start section intro
 .intro{
-  background: $gray;
+  // background: $primary$blue;
+  background: url('../img/intro/pexels-karolina-grabowska-4491461.jpg');
+  background-size: cover;
   min-height: calc(100vh);
   overflow: hidden;
   position: relative;
@@ -322,17 +326,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0, 0, 0, 0.7);
-    z-index: -1;
-  }
-  &::before {
-    content: "";
-    background-color: $blue_2;
-    width: 25%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: 0;
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
   }
   #particles{
@@ -360,11 +354,11 @@
         color: $white;
         max-width: 450px;
         span{
-          color: $blue_2;
+          color: $primary;
         }
       }
       p{
-        color: $gray_3;
+        color: $secMy;
         width: 50%;
         font-size: 0.9rem;
       }
@@ -374,16 +368,6 @@
 @media(max-width: 1000px){
   .intro{
     margin-top: 0 !important;
-    &::before {
-      content: "";
-      background-color: $blue_2;
-      width: 30% !important;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: -1;
-    }
     .row{
       padding-top: 100px;
     }
@@ -426,7 +410,7 @@
         font-weight: 500;
         }
       p{
-        color: $gray_2;
+        color: $secMy;
         font-size: 0.8rem;
       }
     }
@@ -442,7 +426,7 @@
       justify-content: start;
       flex-direction: column;
       label{
-        color: $gray_2;
+        color: $primary;
         margin: 10px 0 0 5px;
         font-weight: 400;
       }
@@ -451,7 +435,8 @@
         width: 100%;
         border-radius: 5px !important;
         &::placeholder{
-          color: $gray_2 !important;
+          color: $primary !important;
+          opacity: 0.4;
         }
       }
       textarea{
@@ -472,8 +457,11 @@
     // display: flex;
     align-items: center;
     .div-text{
+      h3{
+        color: $white;
+      }
       p{
-        color: $gray_3;
+        color: $secMy;
         font-size: 0.9rem;
         line-height: 2;
       }
@@ -537,42 +525,42 @@
     }
   }
 }
-footer {
-  background-color: #fff9f7 !important;
-  padding: 20px 0;
-  .box-footer-1{
-    .logo {
-      position: relative;  
-      img {
-        height: 40px;
-      }
+.footer{
+  color: $black;
+  padding-top: 80px;
+  .box-footer{
+    padding: 20px 0;
+    .logo{
       a{
-        color: $blue;
-        transition: all 0.4s;
+        color: $black;
+        font-size: 3rem;
+        font-family: "Great Vibes", cursive;
+        transition: $transition_4;
         &:hover{
-          color: $blue_2 !important;
+          color: $primary !important;
         }
       }
     }
     p{
-      font-size: 0.9rem;
-      color: $gray_2;
+      line-height: 2 ;
     }
     ul{
       display: flex;
-      align-items: center;
+      align-items: start;
       justify-content: start;
-      margin: 0 !important;
-      padding: 0 !important;
+      list-style: none;
+      margin: 0;
+      padding: 0;
       li{
-        list-style-type: none;
+        margin: 0 10px;
         a{
-          color: $blue !important;
-          font-size: 1rem;
-          margin: 5px;
-          transition: all 0.4s;
-          :hover{
-            color: $blue_2 !important;
+          i{
+            color: $primary;
+            font-size: 1.25rem;
+            transition: $transition_4;
+            &:hover{
+              color: $black;
+            }
           }
         }
       }
@@ -580,36 +568,25 @@ footer {
   }
   .links{
     display: flex;
-    align-items: end;
-    justify-content: end;
+    flex-direction: row-reverse;
+    padding: 20px 0;
     ul{
-      li{
-        list-style-type: none;
-        a{
-          color: $blue;
-          transition: all 0.3s;
-          &:hover{
-            color: $blue_2;
-            padding-left: 15px;
-          }
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      a{
+        color: $primary;
+        transition: $transition_4;
+        &:hover{
+          color: $black;
+          padding-left: 10px;
         }
       }
     }
-    
   }
   .copyRight{
     padding: 20px 0;
-    margin-top: 50px;
-    border-top: 1px solid #eeeeee;;
-  }
-}
-@media (max-width: 1000px){
-  .links{
-    align-items: start !important;
-    justify-content: start !important;   
-    ul{
-      margin: 10px 0 !important;
-      padding: 0 !important;
-    }
+    border-top: 1px solid $primary;
+
   }
 }
