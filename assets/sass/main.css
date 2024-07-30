@@ -12624,6 +12624,7 @@ textarea:active {
   border-radius: 5px;
   text-align: center;
   overflow: hidden;
+  margin: 10px 0;
 }
 .products .feat .spanTop {
   background: #353e4a;
