@@ -55,6 +55,43 @@ window.addEventListener("load", function () {
     }
 });
 
+var body = document.getElementById('body');
+
+const savedClass = localStorage.getItem("body");
+if (savedClass) {
+    body.className = savedClass;
+}
+
+const savedActiveButtonId = localStorage.getItem("activeButton");
+if (savedActiveButtonId) {
+    document.getElementById(savedActiveButtonId).classList.add('active');
+}
+
+function updateClass(buttonId, className) {
+    body.className = '';
+    body.classList.add(className);
+    localStorage.setItem("body", className);
+
+    document.querySelectorAll('button').forEach(button => {
+        button.classList.remove('active');
+    });
+
+    document.getElementById(buttonId).classList.add('active');
+    localStorage.setItem("activeButton", buttonId);
+}
+
 document.getElementById('primary-1').addEventListener('click', function(){
-  
+    updateClass('primary-1', 'green');
+});
+
+document.getElementById('primary-2').addEventListener('click', function(){
+    updateClass('primary-2', 'red');
+});
+
+document.getElementById('primary-3').addEventListener('click', function(){
+    updateClass('primary-3', 'blue');
+});
+
+document.getElementById('primary-4').addEventListener('click', function(){
+    updateClass('primary-4', 'pink');
 });
