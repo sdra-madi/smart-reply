@@ -1,0 +1,422 @@
+$primary: #7dac18;
+.green{
+// fill base sass 
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap');
+*{
+    // font-family: "Open Sans", sans-serif;
+    font-family: "Roboto", sans-serif;
+    [dir="rtl"] & {
+        font-family: "Cairo", sans-serif;
+    }
+}
+body{
+    background: $secMy;
+}
+.btnMy-blue{
+    background: $primary;
+    border-color: $primary;
+    color: $white;
+}
+.heading{
+    h2{
+        color: $primary;
+    }
+    p{
+        color: $primary;
+    }
+}
+.dark{
+    background: $primary;
+    color: $secMy !important;
+    h2{
+        color: $secMy;
+    }
+    p{
+        color: $secMy;
+    }
+}
+#myBtn{
+    background: $primary;
+    border: 1px solid $primary;
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: $primary;
+}
+::-webkit-scrollbar-thumb {
+  background-color: $secMy;
+  transition: all 0.4s;
+}
+::-webkit-scrollbar-thumb:hover {
+  opacity: 0.7;
+}
+.overlay{
+    background: #fff;
+}
+  .loader {
+    border: 3px dotted $primary;
+  }
+  .loader::after {
+    content: '';  
+    border: 3px dotted $primary;
+  }
+input:focus,
+input:active,
+textarea:focus,
+textarea:active {
+    box-shadow: 0 0 5px 2px $primary !important;
+    border-color: $primary !important;
+}
+::selection {
+  background-color: $primary;
+  color: $secMy;
+}
+.book{
+  .btn-external{
+  }
+  
+  .btn-book {
+  }
+  .modal-body{
+    div{
+      ul{
+        li{
+        }
+        #primary-1{
+          background: #7dac18;
+        }
+        #primary-2{
+          background: #4b0110;
+        }
+        #primary-3{
+          background: #1c768f;
+        }
+        #primary-4{
+          background: #f4a7b9;
+        }
+      }
+      }
+    }
+  }
+// start section header 
+.header {
+  .logo {
+    img {}
+    a{
+      color: $white;
+      &:hover{
+        color: $primary !important;
+      }
+    }
+  }
+  .nav-header {
+    ul {
+      .lang{
+        a{
+          color: $white !important;
+          border: 1px solid $white;
+          &:hover{
+            color: $primary !important;
+            border: 1px solid $primary;
+          }
+        }
+      }
+    }
+    .logo-white{}
+    .logo-dark{}
+    .nav-details {
+      .nav-content {
+        li {
+          a {
+            color: $white;
+            &:hover,
+            &.active {
+              color: $primary !important;
+            }
+          }
+          &:hover ul {}
+        }
+      }
+    }
+  }
+  &.headerDark{
+    background: $primary;
+    .lang{
+      a{
+        color: $white !important;
+        &:hover{
+          color: $secMy !important;
+          border: 1px solid $secMy;
+        }
+      }
+    }
+    .nav-details {
+      .nav-content {
+        li {
+          a {
+            color: $white;
+            &:hover,
+            &.active {
+              color: $secMy ;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.nav-header-mobile {
+  .logo {
+    img {
+    }
+    a{
+      color: $secMy !important;
+      &:hover{
+        color: $secMy;
+      }
+    }
+  }
+  .humbrger {
+    i {
+      color: $secMy;
+    }
+  }
+  &.headerDark {
+    background-color: rgba($primary, 0.95);
+    .humbrger {
+      i {
+        color: $white;
+      }
+    }
+    .logo-white{}
+    .logo-dark{}
+}
+.nav-mobile-content {
+  background-color: rgba($primary, 0.95);
+  .lang{
+    a{
+      color: $white !important;
+      &:hover{
+        color: $secMy !important;
+      }
+    }
+  }
+  &.show {}
+
+  .close-btn {
+    i {
+      color: $white;
+    }
+  }
+  .nav-list-mobile {
+    li {
+      a,
+      button {
+        color: $white;
+        &:hover,
+        &.active {
+          color: $secMy !important;
+        }
+      }
+      [dir="rtl"] & button {
+      }
+      [dir="rtl"] & li {
+      }
+      .dropdown_menu {
+        li {
+          a {
+            color: $light;
+            text-decoration: none;
+          }
+          &.active {
+            a {
+              color: $secMy !important;
+            }
+          }
+          [dir="rtl"] & {
+            align-items: end;
+          }
+        }
+      }
+    }
+  }
+}
+}
+// start section intro
+.intro{
+  .row{
+  }
+  &::after{
+  }
+  #particles{
+  }
+  .content-box{
+    .div-img{
+      img{
+      }
+
+    }
+    .div-text{
+      h2{
+        color: $white;
+        span{
+          color: $primary;
+        }
+      }
+      p{
+        color: $secMy;
+      }
+    }
+  }
+}
+// start section services 
+.services{
+  text-align: center;
+  .service-box{
+    .div-img{
+      img{
+      }
+    }
+    .div-text{
+      h3{
+        }
+      p{
+        color: $primary;
+      }
+    }
+  }
+}
+// start section products
+.products{
+  .row{
+  }
+  .feat{
+    background: $secMy;
+    .spanTop{
+      color: $white;
+    }
+    .div-header{
+      border-bottom: 1px solid rgba($primary, 0.95);
+      img{
+      }
+      .div-text-pric{
+        .praice{
+          background: rgba($primary, 0.95);
+          color: $secMy;
+        }
+        .spanText{
+          color: rgba($primary, 0.95);
+        }
+      }
+    }
+    .div-content{
+      ul{
+        li{
+          &::after{
+            color: rgba($primary, 0.95);
+          }
+        }
+      }
+      button{
+      }
+    }
+  }
+}
+// start section contactUs
+.contactUs{
+  .container{
+    .input-group{
+      label{
+        color: $primary;
+      }
+      input,
+      textarea{
+        &::placeholder{
+          color: $primary !important;
+        }
+      }
+      textarea{
+      }
+    }
+    button{
+    }
+  }
+}
+// start downloadOurApp
+.downloadOurApp{
+  .row{
+    .div-text{
+      h3{
+        color: $white;
+      }
+      p{
+        color: $secMy;
+      }
+      .btn-play {
+        &:hover{
+        }
+        &:before {
+          }
+          &:after {
+          }
+          
+          &.store {
+            &:before {
+            }
+            &:after {
+            }
+          }
+      } 
+    }
+    .div-img{
+      img{
+      }
+    }
+  }
+}
+.footer{
+  color: $black;
+  .box-footer{
+    .logo{
+      a{
+        color: $black;
+        &:hover{
+          color: $primary !important;
+        }
+      }
+    }
+    p{
+    }
+    ul{
+      li{
+        a{
+          i{
+            color: $primary;
+            &:hover{
+              color: $black;
+            }
+          }
+        }
+      }
+    }
+  }
+  .links{
+    ul{
+      a{
+        color: $primary;
+        &:hover{
+          color: $black;
+        }
+      }
+    }
+  }
+  .copyRight{
+    border-top: 1px solid $primary;
+
+  }
+}
+}
