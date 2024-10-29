@@ -21,5 +21,8 @@ Route::get('/create', function () {
 Route::get('/otp', function () {
     return view('portal.pages.otp');
 });
+Route::get('/dashboard', function () {
+    return view('dashboard.dashboard');
+});
 Route::get('redirect/facebook', [FacebookController::class, 'RedirectToFacebook']);
 Route::get('callback/facebook', [FacebookController::class, 'HandleCallback']);

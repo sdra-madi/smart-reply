@@ -11,7 +11,7 @@
             </div>
             <div data-aos="fade-up" data-aos-delay="200">
                 <form action="forms/contact.php" method="post">
-                    <h2>{{__("core. btn_signup")}}</h2>
+                    <h2>{{__("core.btn_signup")}}</h2>
                     <div>
                         <input
                         type="text"

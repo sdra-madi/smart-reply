@@ -119,6 +119,9 @@
     <span class="lightMode" id="lightMode">
       <i class="bi bi-moon icone"></i>
     </span>
+    <span class="lightMode">
+      <a href="#">EN</a>
+    </span>
     <a
       href="#"
       id="scroll-top"
