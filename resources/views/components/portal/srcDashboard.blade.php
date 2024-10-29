@@ -35,37 +35,6 @@
    <script src="{{ asset('portal/assets-dash/js/setting-demo.js') }}"></script>
    <script src="{{ asset('portal/assets-dash/js/demo.js') }}"></script>
    <!-- Core JS Files -->
-   <script>
-       $(document).ready(function() {
-           $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
-               type: "line",
-               height: "70",
-               width: "100%",
-               lineWidth: "2",
-               lineColor: "#177dff",
-               fillColor: "rgba(23, 125, 255, 0.14)"
-           });
-
-           // إذا كنت تستخدم lineChart2 أو lineChart3 تأكد من وجودهما في HTML
-           $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
-               type: "line",
-               height: "70",
-               width: "100%",
-               lineWidth: "2",
-               lineColor: "#177dff",
-               fillColor: "rgba(23, 125, 255, 0.14)"
-           });
-
-           $("#lineChart3").sparkline([105, 103], {
-               type: "line",
-               height: "70",
-               width: "100%",
-               lineWidth: "2",
-               lineColor: "#fff",
-               fillColor: "rgba(255, 255, 255, 0.5)"
-           });
-       });
-   </script>
    @stack('end_js')
 
    </body>

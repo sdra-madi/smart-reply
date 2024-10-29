@@ -1,3 +1,17 @@
+@props([
+    'Jan' => '542',
+    'Feb' => '480',
+    'Mar' => '430',
+    'Apr' => '550',
+    'May' => '530',
+    'Jun' => '453',
+    'Jul' => '380',
+    'Aug' => '434',
+    'Sep' => '568',
+    'Oct' => '610',
+    'Nov' => '700',
+    'Dec' => '900',
+])
 <div class="card card-round">
     <div class="card-header">
         <div class="card-head-row">
@@ -60,7 +74,18 @@
                         fill: true,
                         borderWidth: 2,
                         data: [
-                            542, 480, 430, 550, 530, 453, 380, 434, 568, 610, 700, 900,
+                            {{ $Jan }},
+                            {{ $Feb }},
+                            {{ $Mar }},
+                            {{ $Apr }},
+                            {{ $May }},
+                            {{ $Jun }},
+                            {{ $Jul }},
+                            {{ $Aug }},
+                            {{ $Sep }},
+                            {{ $Oct }},
+                            {{ $Nov }},
+                            {{ $Dec }},
                         ],
                     }, ],
                 },

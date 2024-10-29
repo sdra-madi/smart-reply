@@ -3,7 +3,7 @@
         <nav class="pull-left">
             <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="http://www.themekita.com">
+                    <a class="nav-link" href="">
                         Wesam Code
                     </a>
                 </li>
@@ -18,11 +18,7 @@
         <div class="copyright">
             2024, made with
             <i class="fa fa-heart heart text-danger"></i> by
-            <a href="http://www.themekita.com">ThemeKita</a>
-        </div>
-        <div>
-            Distributed by
-            <a target="_blank" href="https://themewagon.com/">Wesam Code</a>.
+            <a href="">Wesam Code</a>
         </div>
     </div>
 </footer>
