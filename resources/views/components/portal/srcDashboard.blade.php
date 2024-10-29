@@ -34,6 +34,12 @@
    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
    <script src="{{ asset('portal/assets-dash/js/setting-demo.js') }}"></script>
    <script src="{{ asset('portal/assets-dash/js/demo.js') }}"></script>
+   <!-- plugin for scrollbar  -->
+   <script src="{{ asset('portal/assets-pro/js/plugins/perfect-scrollbar.min.js') }}" async></script>
+   <!-- github button -->
+   <script async defer src="https://buttons.github.io/buttons.js"></script>
+   <!-- main script file  -->
+   <script src="{{ asset('portal/assets-pro/js/soft-ui-dashboard-tailwind.js?v=1.0.5') }}" async></script>
    <!-- Core JS Files -->
    @stack('end_js')
 

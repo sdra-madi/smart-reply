@@ -5,7 +5,7 @@
             <div class="switch-block">
                 <h4>Logo Header</h4>
                 <div class="btnSwitch">
-                    <button type="button" class="selected changeLogoHeaderColor" data-color="dark"></button>
+                    <button type="button" class="changeLogoHeaderColor" data-color="dark"></button>
                     <button type="button" class="changeLogoHeaderColor" data-color="blue"></button>
                     <button type="button" class="changeLogoHeaderColor" data-color="purple"></button>
                     <button type="button" class="changeLogoHeaderColor" data-color="light-blue"></button>
@@ -33,7 +33,7 @@
                     <button type="button" class="changeTopBarColor" data-color="green"></button>
                     <button type="button" class="changeTopBarColor" data-color="orange"></button>
                     <button type="button" class="changeTopBarColor" data-color="red"></button>
-                    <button type="button" class="selected changeTopBarColor" data-color="white"></button>
+                    <button type="button" class="changeTopBarColor" data-color="white"></button>
                     <br />
                     <button type="button" class="changeTopBarColor" data-color="dark2"></button>
                     <button type="button" class="changeTopBarColor" data-color="blue2"></button>
@@ -48,7 +48,7 @@
                 <h4>Sidebar</h4>
                 <div class="btnSwitch">
                     <button type="button" class="changeSideBarColor" data-color="white"></button>
-                    <button type="button" class="selected changeSideBarColor" data-color="dark"></button>
+                    <button type="button" class="changeSideBarColor" data-color="dark"></button>
                     <button type="button" class="changeSideBarColor" data-color="dark2"></button>
                 </div>
             </div>

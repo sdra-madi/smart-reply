@@ -21,9 +21,7 @@
     document.addEventListener("scroll", toggleScrolled);
     window.addEventListener("load", toggleScrolled);
 
-    /**
-     * Mobile nav toggle
-     */
+    // Mobile nav toggle
     const mobileNavToggleBtn = document.querySelector(".mobile-nav-toggle");
 
     function mobileNavToogle() {
@@ -33,9 +31,7 @@
     }
     mobileNavToggleBtn.addEventListener("click", mobileNavToogle);
 
-    /**
-     * Hide mobile nav on same-page/hash links
-     */
+    // Hide mobile nav on same-page/hash links
     document.querySelectorAll("#navmenu a").forEach((navmenu) => {
         navmenu.addEventListener("click", () => {
             if (document.querySelector(".mobile-nav-active")) {
@@ -44,9 +40,7 @@
         });
     });
 
-    /**
-     * Toggle mobile nav dropdowns
-     */
+    // Toggle mobile nav dropdowns
     document
         .querySelectorAll(".navmenu .toggle-dropdown")
         .forEach((navmenu) => {
@@ -60,11 +54,11 @@
             });
         });
 
-    // edite light mode & dark mode
+    // Light mode & dark mode
     const button = document.querySelector(".icone");
     const body = document.querySelector("body");
 
-    // استرجاع الوضع من localStorage وتعيينه عند تحميل الصفحة
+    // Retrieve mode from localStorage
     window.addEventListener("load", function () {
         const savedMode = localStorage.getItem("mode");
         if (savedMode === "dark") {
@@ -76,9 +70,18 @@
             button.classList.add("bi-moon");
             body.classList.remove("dark-mode");
         }
+
+        // Load inputs from localStorage
+        const inputs = document.querySelectorAll(
+            'input[type="text"], input[type="number"]'
+        );
+        inputs.forEach((input) => {
+            input.value = localStorage.getItem(input.name) || ""; // Restore value
+            input.disabled = !input.value; // Disable if empty
+        });
     });
 
-    // تغيير الوضع وتخزينه في localStorage
+    // Change mode and store it in localStorage
     document.getElementById("lightMode").addEventListener("click", function () {
         if (button.classList.contains("bi-moon")) {
             button.classList.remove("bi-moon");
@@ -141,9 +144,7 @@
      */
     new PureCounter();
 
-    /**
-     * Frequently Asked Questions Toggle
-     */
+    // FAQ Toggle
     document
         .querySelectorAll(".faq-item h3, .faq-item .faq-toggle")
         .forEach((faqItem) => {
@@ -153,7 +154,7 @@
         });
 
     /**
-     * Init isotope layout and filters
+     * Isotope layout and filters
      */
     document
         .querySelectorAll(".isotope-layout")
@@ -204,25 +205,6 @@
         });
 
     /**
-     * Init swiper sliders
-     */
-    // function initSwiper() {
-    //   document.querySelectorAll(".init-swiper").forEach(function (swiperElement) {
-    //     let config = JSON.parse(
-    //       swiperElement.querySelector(".swiper-config").innerHTML.trim()
-    //     );
-
-    //     if (swiperElement.classList.contains("swiper-tab")) {
-    //       initSwiperWithCustomPagination(swiperElement, config);
-    //     } else {
-    //       new Swiper(swiperElement, config);
-    //     }
-    //   });
-    // }
-
-    // window.addEventListener("load", initSwiper);
-
-    /**
      * Correct scrolling position upon page load for URLs containing hash links.
      */
     window.addEventListener("load", function (e) {
@@ -267,24 +249,23 @@
     }
     window.addEventListener("load", navmenuScrollspy);
     document.addEventListener("scroll", navmenuScrollspy);
+
+    // Save input values on input change
+    document
+        .querySelectorAll('input[type="text"], input[type="number"]')
+        .forEach((input) => {
+            input.addEventListener("input", function () {
+                localStorage.setItem(this.name, this.value); // Save the value
+            });
+        });
+
+    // Load inputs from localStorage
+    document.addEventListener("DOMContentLoaded", () => {
+        const inputs = document.querySelectorAll(
+            'input[type="text"], input[type="number"]'
+        );
+        inputs.forEach((input) => {
+            input.value = localStorage.getItem(input.name) || ""; // Restore value
+        });
+    });
 })();
-
-function moveToNext(currentInput, nextInputName) {
-    // تحقق مما إذا كانت القيمة في الحقل الحالي غير فارغة
-    if (currentInput.value.length >= 1) {
-        const nextInput = document.getElementsByName(nextInputName)[0];
-        if (nextInput) {
-            nextInput.disabled = false;
-            nextInput.focus();
-        }
-    }
-}
-
-function moveToPrev(event, prevInputName) {
-    if (event.key === "Backspace") {
-        const prevInput = document.getElementsByName(prevInputName)[0];
-        if (prevInput) {
-            prevInput.focus();
-        }
-    }
-}
