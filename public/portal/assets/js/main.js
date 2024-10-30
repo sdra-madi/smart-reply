@@ -70,15 +70,6 @@
             button.classList.add("bi-moon");
             body.classList.remove("dark-mode");
         }
-
-        // Load inputs from localStorage
-        const inputs = document.querySelectorAll(
-            'input[type="text"], input[type="number"]'
-        );
-        inputs.forEach((input) => {
-            input.value = localStorage.getItem(input.name) || ""; // Restore value
-            input.disabled = !input.value; // Disable if empty
-        });
     });
 
     // Change mode and store it in localStorage
@@ -249,23 +240,4 @@
     }
     window.addEventListener("load", navmenuScrollspy);
     document.addEventListener("scroll", navmenuScrollspy);
-
-    // Save input values on input change
-    document
-        .querySelectorAll('input[type="text"], input[type="number"]')
-        .forEach((input) => {
-            input.addEventListener("input", function () {
-                localStorage.setItem(this.name, this.value); // Save the value
-            });
-        });
-
-    // Load inputs from localStorage
-    document.addEventListener("DOMContentLoaded", () => {
-        const inputs = document.querySelectorAll(
-            'input[type="text"], input[type="number"]'
-        );
-        inputs.forEach((input) => {
-            input.value = localStorage.getItem(input.name) || ""; // Restore value
-        });
-    });
 })();

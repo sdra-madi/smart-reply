@@ -1406,12 +1406,12 @@
     margin: 0;
     text-align: center;
 }
-input:disabled {
+/* .login .container-box input:disabled {
     color: var(--default-color);
     background-color: var(--accent-color) !important;
     opacity: 0.4 !important;
     border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
+} */
 @media (max-width: 700px) {
     .login {
         margin-top: 80px;
