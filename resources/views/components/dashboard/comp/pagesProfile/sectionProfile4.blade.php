@@ -41,16 +41,6 @@
                     class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
                     <strong class="text-slate-700">Location:</strong> &nbsp; {{ $location }}
                 </li>
-                <li class="relative block px-4 py-2 pb-0 pl-0 bg-white border-0 border-t-0 rounded-b-lg text-inherit">
-                    <strong class="leading-normal text-sm text-slate-700">Social:</strong>
-                    &nbsp;
-                    @foreach ($socialLinks as $platform => $link)
-                        <a class="inline-block py-0 pl-1 pr-2 mb-0 font-bold text-center transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in"
-                            href="{{ $link }}">
-                            <i class="fab fa-{{ $platform }} fa-lg"></i>
-                        </a>
-                    @endforeach
-                </li>
             </ul>
         </div>
     </div>

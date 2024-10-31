@@ -37,7 +37,7 @@
                             </div>
                         </div>
                         <div class="create">
-                            <a class="txt2" href="#">
+                            <a class="txt2" href="{{ route('login') }}">
                                 Login
                                 <i class="bi bi-arrow-right m-l-5" aria-hidden="true"></i>
                             </a>
