@@ -11,7 +11,8 @@
             <x-dashboard.comp.pagesProfile.sectionProfile1 />
             <div
                 class="relative flex flex-col flex-auto min-w-0 p-4 mx-6 -mt-16 overflow-hidden break-words border-0 shadow-blur rounded-2xl bg-white/80 bg-clip-border backdrop-blur-2xl backdrop-saturate-200">
-                <x-dashboard.comp.pagesProfile.sectionProfile2 fullName="Alec M. Thompson" Email="alecthompson@mail.com" />
+                <x-dashboard.comp.pagesProfile.sectionProfile2 fullName="Alec M. Thompson" Email="alecthompson@mail.com"
+                    profilePicture="portal/assets-dash/img/profile.jpg" />
             </div>
         </div>
         <div class="w-full p-6 mx-auto">
@@ -37,7 +38,8 @@
 
                 <x-dashboard.comp.pagesProfile.sectionProfile4 title="Profile Information"
                     bio="Hi, I’m Alec Thompson, Decisions: If you can’t decide, the answer is no. If two equally difficult paths, choose the one more painful in the short term (pain avoidance is creating an illusion of equality)."
-                    fullName="Alec M. Thompson" mobile="(44) 123 1234 123" email="alecthompson@mail.com" location="USA" />
+                    fullName="Alec M. Thompson" mobile="(44) 123 1234 123" email="alecthompson@mail.com" />
+
 
                 @php
                     $conversations = [

@@ -24,8 +24,9 @@
                         <div class="flex flex-col items-start justify-center">
                             <h6 class="mb-0 leading-normal text-sm">{{ $conversation['name'] }}</h6>
                         </div>
-                        <a class="inline-block py-3 pl-0 pr-4 mb-0 ml-auto font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in hover:scale-102 hover:active:scale-102 active:opacity-85 text-hakli hover:text-hakli-800 hover:shadow-none active:scale-100"
-                            href="javascript:;">OFF</a>
+                        <span
+                            class="inline-block py-3 pl-0 pr-4 mb-0 ml-auto font-bold text-center uppercase align-middle transition-all bg-transparent border-0 rounded-lg shadow-none leading-pro text-xs ease-soft-in hover:active:scale-102 active:opacity-85 text-hakli active:scale-100"
+                            href="javascript:;">OFF</span>
                     </li>
                 @endforeach
             </ul>
