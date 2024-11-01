@@ -1,4 +1,13 @@
 <x-portal.headDashboard />
+<style>
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #1a2035;
+    }
+</style>
 <div class="wrapper">
     <!-- Sidebar -->
     <x-dashboard.sidebar />
