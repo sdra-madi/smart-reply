@@ -56,7 +56,7 @@
                     </a>
                 </li>
                 <li class="nav-item" data-id="instagram">
-                    <a href="">
+                    <a href="{{ route('instagram') }}">
                         <i class="fa-brands fa-instagram"></i>
                         <p>instagram</p>
                     </a>
@@ -67,9 +67,19 @@
                         <p>Whatsapp</p>
                     </a>
                 </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Products</h4>
+                </li>
+                <li class="nav-item" data-id="products">
+                    <a href="{{ route('products') }}">
+                        <i class="fa-brands fa-product-hunt"></i>
+                        <p>Products</p>
+                    </a>
+                </li>
             </ul>
-
-
         </div>
     </div>
 </div>
@@ -100,5 +110,4 @@
             });
         });
     });
-    /////////////////////////////////////////////////////////////////////////////////
 </script>

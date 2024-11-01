@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="{{ asset('portal/assets-dash/css/plugins.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('portal/assets-dash/css/kaiadmin.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('portal/assets-dash/css/demo.css') }}" />
+    <link rel="stylesheet" href="{{ asset('portal/assets/vendor/bootstrap-icons/bootstrap-icons.css') }}" />
     <script src="{{ asset('portal/assets-dash/js/plugin/webfont/webfont.min.js') }}"></script>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.0/dist/tailwind.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -43,6 +44,13 @@
         });
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap");
+
+        * {
+            font-family: "Cairo", sans-serif;
+        }
+    </style>
 </head>
 
 <body>

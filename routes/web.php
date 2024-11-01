@@ -36,9 +36,18 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/profile', function () {
         return view('dashboard.pages.profile');
     })->name('profile');
+    
     Route::get('/facebook', function () {
         return view('dashboard.pages.socialMedia.pageFacebook');
     })->name('Facebook');
+    
+    Route::get('/instagram', function () {
+        return view('dashboard.pages.socialMedia.pageInstagram');
+    })->name('instagram');
+    
+    Route::get('/products', function () {
+        return view('dashboard.pages.products');
+    })->name('products');
 });
 Route::get('redirect/facebook', [FacebookController::class, 'RedirectToFacebook']);
 Route::get('callback/facebook', [FacebookController::class, 'HandleCallback']);

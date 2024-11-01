@@ -55,9 +55,8 @@
     @endphp
 
     <div style="margin:100px 0 0 0;">
-        <h2 style="padding: 10px 20px">Facebook</h2>
+        <h2 style="padding: 10px 20px">Instagram</h2>
         <x-dashboard.comp.pagesProfile.sectionProfile6 :projects="$projects" />
-        <!-- Pagination -->
     </div>
     <nav aria-label="Page navigation example" class="flex justify-center my-6">
         <ul class="inline-flex -space-x-px text-base h-20">
