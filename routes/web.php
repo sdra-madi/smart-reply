@@ -1,6 +1,12 @@
 <?php
 
 use App\Http\Controllers\FacebookController;
+use App\Http\Controllers\portal\auth\LoginController;
+use App\Http\Controllers\portal\auth\RegisterController;
+use App\Http\Controllers\portal\auth\VerificationController;
+use App\Http\Controllers\portal\auth\PasswordResetController;
+
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/welcome', function () {
@@ -9,28 +15,42 @@ Route::get('/welcome', function () {
 Route::get('/', function () {
     return view('portal.pages.homePage');
 });
-Route::get('/team', function () {
-    return view('portal.pages.teamPage');
+// Registration and Login Routes
+Route::middleware('guest')->group(function () {
+    Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [RegisterController::class, 'store'])->name('store');
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'login']);
 });
-Route::get('/login', function () {
-    return view('portal.pages.login');
+
+// Email Verification Routes and logout
+Route::prefix('email')->middleware('auth')->group(function () {
+    Route::get('/verify', [VerificationController::class, 'showVerificationForm'])->name('verification.notice');
+    Route::get('/verify/{id}/{hash}', [VerificationController::class, 'verify'])->middleware(['signed'])->name('verification.verify');
+    Route::post('/resend', [VerificationController::class, 'resend'])->middleware(['throttle:6,1'])->name('verification.resend');
+    Route::post('/logout', [RegisterController::class, 'logout'])->name('logout');
 });
-Route::get('/create', function () {
-    return view('portal.pages.create');
+
+// Password Reset Routes
+Route::middleware('guest')->group(function () {
+    Route::get('/forgot-password', [PasswordResetController::class, 'requestForm'])->name('password.request');
+    Route::post('/forgot-password', [PasswordResetController::class, 'sendResetLink'])->name('password.email');
+    Route::get('/reset-password/{token}', [PasswordResetController::class, 'resetForm'])->name('password.reset');
+    Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');
 });
-Route::get('/otp', function () {
-    return view('portal.pages.otp');
-});
-Route::prefix('dashboard')->group(function () {
+
+// Route::get('/otp', function () {
+//     return view('portal.pages.otp');
+// });
+Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/', function () {
         return view('dashboard.dashboard');
-    })->name('dashboard.dashboarde');
+    })->name('dashboarde');
 
     Route::get('/profile', function () {
         return view('dashboard.pages.profile');
     })->name('dashboard.pages.profile');
-
 });
 Route::get('redirect/facebook', [FacebookController::class, 'RedirectToFacebook']);
 Route::get('callback/facebook', [FacebookController::class, 'HandleCallback']);

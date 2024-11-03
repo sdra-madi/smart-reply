@@ -1,22 +1,20 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
-    <div
-      class="container-fluid container-xl position-relative d-flex align-items-center"
-    >
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
-        {{-- <img src="assets/img/logo.png" alt="" /> --}}
-        <h1 class="sitename">Wesam Code</h1>
-      </a>
+    <div class="container-fluid container-xl position-relative d-flex align-items-center">
+        <a href="index.html" class="logo d-flex align-items-center me-auto">
+            {{-- <img src="assets/img/logo.png" alt="" /> --}}
+            <h1 class="sitename">Wesam Code</h1>
+        </a>
 
-      <nav id="navmenu" class="navmenu">
-        <ul>
-          <li>
-            <a href="index.html" class="active">{{ __('core.home') }}<br /></a>
-          </li>
-          <li><a href="#about">{{ __('core.about') }}</a></li>
-          <li><a href="#services">{{ __('core.services') }}</a></li>
-          <li><a href="#pricing ">{{ __('core.pricing') }}</a></li>
-          <li><a href="team.html">{{ __('core.team') }}</a></li>
-           {{-- <li class="dropdown">
+        <nav id="navmenu" class="navmenu">
+            <ul>
+                <li>
+                    <a href="{{ url('/') }}" class="active">{{ __('core.home') }}<br /></a>
+                </li>
+                <li><a href="#about">{{ __('core.about') }}</a></li>
+                <li><a href="#services">{{ __('core.services') }}</a></li>
+                <li><a href="#pricing ">{{ __('core.pricing') }}</a></li>
+                <li><a href="#team">{{ __('core.team') }}</a></li>
+                {{-- <li class="dropdown">
             <a href="#"
               ><span>{{ __('core.dropdown') }}</span>
               <i class="bi bi-chevron-down toggle-dropdown"></i
@@ -74,13 +72,11 @@
               </li>
             </ul>
           </li> --}}
-          <li><a href="#contact">{{ __('core.contact') }}</a></li>
-        </ul>
-        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-      </nav>
+                <li><a href="#contact">{{ __('core.contact') }}</a></li>
+            </ul>
+            <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
 
-      <a class="btn-getstarted flex-md-shrink-0" href="index.html#about"
-        >{{ __('core.login') }}</a
-      >
+        <a class="btn-getstarted flex-md-shrink-0" href="{{ route('login') }}">{{ __('core.login') }}</a>
     </div>
-  </header>
+</header>

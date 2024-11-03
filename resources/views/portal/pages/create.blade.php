@@ -10,21 +10,31 @@
                     </div>
                 </div>
                 <div data-aos="fade-up" data-aos-delay="200">
-                    <form action="forms/contact.php" method="post">
+                    <form action="{{ route('store') }}" method="post">
+                        @csrf
                         <h2>{{ __('core.btn_signup') }}</h2>
                         <div>
-                            <input type="" class="form-control" name="username"
+                            <input type="" class="form-control" name="name"
                                 placeholder="{{ __('core.your_username') }}" required="" />
+                            @error('name')
+                                <div class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </div>
                         <div>
                             <input type="" class="form-control" name="email"
                                 placeholder="{{ __('core.your_email') }}" required="" />
+                                @error('email')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                         </div>
                         <div>
                             <input type="password" class="form-control" name="password"
                                 placeholder="{{ __('core.your_password') }}" required="" />
+                                @error('password')
+                                    <div class="alert alert-danger">{{ $message }}</div>
+                                    @enderror
                         </div>
-                        <button type="submit" name="submit">{{ __('core.btn_signup') }}</button>
+                        <button type="submit">{{ __('core.btn_signup') }}</button>
                         <div class="div-width">
                             <span>Or login via :</span>
                             <div class="login-width">
@@ -37,7 +47,7 @@
                             </div>
                         </div>
                         <div class="create">
-                            <a class="txt2" href="#">
+                            <a class="txt2" href="{{ route('login') }}">
                                 Login
                                 <i class="bi bi-arrow-right m-l-5" aria-hidden="true"></i>
                             </a>
