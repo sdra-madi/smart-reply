@@ -48,6 +48,10 @@ Route::prefix('dashboard')->group(function () {
     Route::get('/products', function () {
         return view('dashboard.pages.products');
     })->name('products');
+
+    Route::get('/whatsapp', function () {
+        return view('dashboard.pages.whatsapp');
+    })->name('whatsapp');
 });
 Route::get('redirect/facebook', [FacebookController::class, 'RedirectToFacebook']);
 Route::get('callback/facebook', [FacebookController::class, 'HandleCallback']);

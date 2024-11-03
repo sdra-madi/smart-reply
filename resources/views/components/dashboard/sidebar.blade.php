@@ -61,12 +61,6 @@
                         <p>instagram</p>
                     </a>
                 </li>
-                <li class="nav-item" data-id="whatsapp">
-                    <a href="">
-                        <i class="fa-brands fa-whatsapp"></i>
-                        <p>Whatsapp</p>
-                    </a>
-                </li>
                 <li class="nav-section">
                     <span class="sidebar-mini-icon">
                         <i class="fa fa-ellipsis-h"></i>
@@ -77,6 +71,18 @@
                     <a href="{{ route('products') }}">
                         <i class="fa-brands fa-product-hunt"></i>
                         <p>Products</p>
+                    </a>
+                </li>
+                <li class="nav-section">
+                    <span class="sidebar-mini-icon">
+                        <i class="fa fa-ellipsis-h"></i>
+                    </span>
+                    <h4 class="text-section">Messenger</h4>
+                </li>
+                <li class="nav-item" data-id="whatsapp">
+                    <a href="{{ route('whatsapp') }}">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <p>Whatsapp</p>
                     </a>
                 </li>
             </ul>
