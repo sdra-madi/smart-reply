@@ -11,6 +11,8 @@
     @include('portal.sections.services')
     {{-- pricing --}}
     @include('portal.sections.pricing')
+    {{-- team --}}
+    @include('portal.sections.team')
     {{-- clients --}}
     @include('portal.sections.clients')
     {{-- contact --}}

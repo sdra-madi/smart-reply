@@ -8,7 +8,7 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li>
-                    <a href="{{ route('home') }}" class="active">{{ __('core.home') }}<br /></a>
+                    <a href="{{ url('/') }}" class="active">{{ __('core.home') }}<br /></a>
                 </li>
 
                 <li><a href="{{ route('home') }}#about">{{ __('core.about') }}</a></li>
