@@ -14,7 +14,8 @@ Route::get('/welcome', function () {
 });
 Route::get('/', function () {
     return view('portal.pages.homePage');
-});
+})->name('home');
+
 // Registration and Login Routes
 Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
@@ -46,11 +47,35 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     Route::get('/', function () {
         return view('dashboard.dashboard');
-    })->name('dashboarde');
+    })->name('dashboard');
 
     Route::get('/profile', function () {
         return view('dashboard.pages.profile');
-    })->name('dashboard.pages.profile');
+    })->name('profile');
+
+    Route::get('/facebook', function () {
+        return view('dashboard.pages.socialMedia.pageFacebook');
+    })->name('facebook');
+
+    Route::get('/postfacebook', function () {
+        return view('dashboard.pages.socialMedia.postFacebook');
+    })->name('postfacebook');
+
+    Route::get('/addreply', function () {
+        return view('dashboard.pages.socialMedia.addreply');
+    })->name('addreply');
+
+    Route::get('/instagram', function () {
+        return view('dashboard.pages.socialMedia.pageInstagram');
+    })->name('instagram');
+
+    Route::get('/products', function () {
+        return view('dashboard.pages.products');
+    })->name('products');
+
+    Route::get('/whatsapp', function () {
+        return view('dashboard.pages.socialMedia.whatsapp');
+    })->name('whatsapp');
 });
 Route::get('redirect/facebook', [FacebookController::class, 'RedirectToFacebook']);
 Route::get('callback/facebook', [FacebookController::class, 'HandleCallback']);

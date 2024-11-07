@@ -6,16 +6,16 @@
             [
                 'name' => 'Project #2',
                 'title' => 'Modern',
-                'description' => null,
+                'description' => 'wesam wesam wesam wesam',
                 'image' => '../portal/assets-pro/img/post.webp',
-                'button' => 'View Pages ',
+                'button' => 'View Post ',
             ],
         ];
     @endphp
 
     <div style="margin:100px 0 0 0;">
         <h2 class="px-4">Facebook</h2>
-        <x-dashboard.comp.pagesProfile.sectionProfile6 :projects="$projects" title="Pages"
+        <x-dashboard.comp.pagesProfile.sectionProfile6 :projects="$projects" title="Posts"
             description="Project descriptions go here" />
 
 

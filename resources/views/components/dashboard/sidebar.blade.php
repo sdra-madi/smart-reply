@@ -38,9 +38,9 @@
                     <h4 class="text-section">Pages</h4>
                 </li>
                 <li class="nav-item" data-id="profile">
-                    <a href="{{ route('profile') }}">
+                    <a href="">
                         <i class="fas fa-user"></i>
-                        <p>Profile</p>
+                        <p>test</p>
                     </a>
                 </li>
                 <li class="nav-section">
@@ -50,7 +50,7 @@
                     <h4 class="text-section">Social Media</h4>
                 </li>
                 <li class="nav-item" data-id="facebook">
-                    <a href="{{ route('Facebook') }}">
+                    <a href="{{ route('facebook') }}">
                         <i class="fa-brands fa-facebook-f"></i>
                         <p>Facebook</p>
                     </a>
