@@ -18,18 +18,18 @@
                     <form action="{{ route('login') }}" method="post">
                         @csrf
                         <h2>Login</h2>
-                        <div>
+                        <div class="div-input-c">
                             <input type="email" class="form-control" name="email"
                                 placeholder="{{ __('core.your_email') }}" required="" />
                             @error('email')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <span class="my-alert">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div>
+                        <div class="div-input-c">
                             <input type="password" class="form-control" name="password"
                                 placeholder="{{ __('core.your_password') }}" required="" />
                             @error('password')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <span class="my-alert">{{ $message }}</span>
                             @enderror
                         </div>
                         <button type="submit">{{ __('core.btn_login') }}</button>

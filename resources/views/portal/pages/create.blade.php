@@ -13,26 +13,26 @@
                     <form action="{{ route('store') }}" method="post">
                         @csrf
                         <h2>{{ __('core.btn_signup') }}</h2>
-                        <div>
+                        <div class="div-input-c">
                             <input type="" class="form-control" name="name"
                                 placeholder="{{ __('core.your_username') }}" required="" />
                             @error('name')
-                                <div class="alert alert-danger">{{ $message }}</div>
+                                <span class="my-alert">{{ $message }}</span>
                             @enderror
                         </div>
-                        <div>
+                        <div class="div-input-c">
                             <input type="" class="form-control" name="email"
                                 placeholder="{{ __('core.your_email') }}" required="" />
-                                @error('email')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                            @error('email')
+                                <span class="my-alert">{{ $message }}</span>
+                            @enderror
                         </div>
-                        <div>
+                        <div class="div-input-c">
                             <input type="password" class="form-control" name="password"
                                 placeholder="{{ __('core.your_password') }}" required="" />
-                                @error('password')
-                                    <div class="alert alert-danger">{{ $message }}</div>
-                                    @enderror
+                            @error('password')
+                                <span class="my-alert">{{ $message }}</span>
+                            @enderror
                         </div>
                         <button type="submit">{{ __('core.btn_signup') }}</button>
                         <div class="div-width">

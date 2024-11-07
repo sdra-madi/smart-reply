@@ -1,6 +1,6 @@
 @props([
-    'username' => 'Hizrian',                   
-    'email' => 'hello@example.com',      
+    'username' => auth()->user()->name,                   
+    'email' => auth()->user()->email,      
     'avatar' => 'portal/assets-dash/img/profile.jpg',
 ])
 <style>
@@ -14,9 +14,9 @@
         <div class="avatar-sm">
             <img src="{{ asset($avatar) }}" alt="..." class="avatar-img rounded-circle" />
         </div>
-        <span class="profile-username text-white">
-            <span class="op-7 text-white">Hi,</span>
-            <span class="fw-bold text-white">{{ $username }}</span>
+        <span class="profile-username">
+            <span class="op-7">Hi,</span>
+            <span class="fw-bold">{{ $username }}</span>
         </span>
     </a>
     <ul class="dropdown-menu dropdown-user animated fadeIn">
@@ -29,13 +29,17 @@
                     <div class="u-text">
                         <h4>{{ $username }}</h4>
                         <p class="text-muted">{{ $email }}</p>
-                        <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                        <a href="{{ route('dashboard.profile') }}" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                     </div>
                 </div>
             </li>
             <li>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{ route('profile') }}">My Profile</a>
+                <a class="dropdown-item" href="#">My Profile</a>
+                <a class="dropdown-item" href="#">My Balance</a>
+                <a class="dropdown-item" href="#">Inbox</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Account Setting</a>
                 <div class="dropdown-divider"></div>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf

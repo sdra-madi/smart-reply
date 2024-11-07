@@ -14,7 +14,8 @@ Route::get('/welcome', function () {
 });
 Route::get('/', function () {
     return view('portal.pages.homePage');
-});
+})->name('home');
+
 // Registration and Login Routes
 Route::middleware('guest')->group(function () {
     Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
@@ -46,7 +47,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     Route::get('/', function () {
         return view('dashboard.dashboard');
-    })->name('dashboarde');
+    })->name('dashboard');
 
     Route::get('/profile', function () {
         return view('dashboard.pages.profile');
