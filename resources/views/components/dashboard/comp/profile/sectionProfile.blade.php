@@ -1,6 +1,6 @@
 @props([
-    'username' => 'Hizrian',                   
-    'email' => 'hello@example.com',      
+    'username' => auth()->user()->name,                   
+    'email' => auth()->user()->email,      
     'avatar' => 'portal/assets-dash/img/profile.jpg',
 ])
 
@@ -24,7 +24,7 @@
                     <div class="u-text">
                         <h4>{{ $username }}</h4>
                         <p class="text-muted">{{ $email }}</p>
-                        <a href="profile.html" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
+                        <a href="{{ route('dashboard.profile') }}" class="btn btn-xs btn-secondary btn-sm">View Profile</a>
                     </div>
                 </div>
             </li>
@@ -36,7 +36,10 @@
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="#">Account Setting</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">Logout</a>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="dropdown-item">Logout</button>
+                </form>
             </li>
         </div>
     </ul>

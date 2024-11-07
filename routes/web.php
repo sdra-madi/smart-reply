@@ -50,7 +50,7 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
 
     Route::get('/profile', function () {
         return view('dashboard.pages.profile');
-    })->name('dashboard.pages.profile');
+    })->name('dashboard.profile');
 });
 Route::get('redirect/facebook', [FacebookController::class, 'RedirectToFacebook']);
 Route::get('callback/facebook', [FacebookController::class, 'HandleCallback']);
