@@ -7,9 +7,65 @@
                     <h6 class="mb-0">{{ $title }}</h6>
                 </div>
                 <div class="w-full max-w-full px-3 text-right shrink-0 md:w-4/12 md:flex-none">
-                    <a href="javascript:;" data-target="tooltip_trigger" data-placement="top">
+                    <a type="button" data-bs-toggle="modal" data-bs-target="#exampleModal">
                         <i class="leading-normal fas fa-user-edit text-sm text-slate-400"></i>
                     </a>
+                    <!-- Button trigger modal -->
+                    <div class="book">
+                        <!-- Modal -->
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5 fw-normal" id="exampleModalLabel">
+                                            Edit Profile
+                                        </h1>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="container text-start">
+                                            <form action="">
+                                                <div style="align-items: center; margin: 10px 0;"
+                                                    class="d-flex justify-content-between">
+                                                    <div style="position: relative;">
+                                                        <label for="">Profile Picture</label>
+                                                        <img src="{{ asset('portal/assets-dash/img/profile.jpg') }}"
+                                                            alt="" class="border-4 border-red-500"
+                                                            style="border-radius: 50%;">
+                                                    </div>
+                                                    <div>
+                                                        <button type="button" class="btn btn-danger">Delete</button>
+                                                        <button type="button" class="btn btn-success">Upload</button>
+                                                    </div>
+                                                </div>
+                                                <div class="mt-2 mb-2">
+                                                    <label for="">User Name</label>
+                                                    <input type="text" placeholder="UserName" class="form-control">
+                                                </div>
+                                                <div class="mt-2 mb-2">
+                                                    <label for="">Full Name</label>
+                                                    <input type="text" placeholder="Full Name" class="form-control">
+                                                </div>
+                                                <div class="mt-2 mb-2">
+                                                    <label for="">Description</label>
+                                                    <textarea name="" id="" cols="20" rows="5" type="text" placeholder="Description"
+                                                        class="form-control"></textarea>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
+                                            close
+                                        </button>
+                                        <button type="button" class="btn btn-success">
+                                            Save
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div data-target="tooltip"
                         class="hidden px-2 py-1 text-center text-white bg-black rounded-lg text-sm" role="tooltip">
                         Edit Profile
@@ -19,38 +75,26 @@
                 </div>
             </div>
         </div>
-        <div class="flex-auto p-4">
-            <p class="leading-normal text-sm">
-                {{ $bio }}
-            </p>
+        <div class="flex-auto pl-4 pr-4">
             <hr class="h-px my-6 bg-transparent bg-gradient-to-r from-transparent via-white to-transparent" />
-            <ul class="flex flex-col pl-0 mb-0 rounded-lg">
-                <li
-                    class="relative block px-4 py-2 pt-0 pl-0 leading-normal bg-white border-0 rounded-t-lg text-sm text-inherit">
-                    <strong class="text-slate-700">Full Name:</strong> &nbsp; {{ $fullName }}
-                </li>
-                <li
-                    class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
-                    <strong class="text-slate-700">Mobile:</strong> &nbsp; {{ $mobile }}
-                </li>
-                <li
-                    class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
-                    <strong class="text-slate-700">Email:</strong> &nbsp; {{ $email }}
-                </li>
-                <li
-                    class="relative block px-4 py-2 pl-0 leading-normal bg-white border-0 border-t-0 text-sm text-inherit">
-                    <strong class="text-slate-700">Location:</strong> &nbsp; {{ $location }}
-                </li>
-                <li class="relative block px-4 py-2 pb-0 pl-0 bg-white border-0 border-t-0 rounded-b-lg text-inherit">
-                    <strong class="leading-normal text-sm text-slate-700">Social:</strong>
-                    &nbsp;
-                    @foreach ($socialLinks as $platform => $link)
-                        <a class="inline-block py-0 pl-1 pr-2 mb-0 font-bold text-center transition-all bg-transparent border-0 rounded-lg shadow-none cursor-pointer leading-pro text-xs ease-soft-in"
-                            href="{{ $link }}">
-                            <i class="fab fa-{{ $platform }} fa-lg"></i>
-                        </a>
-                    @endforeach
-                </li>
+            <ul class=" p-0 m-0 rounded-lg">
+                <div>
+                    <ul>
+                        <li class="py-3">
+                            <strong>Full Name:</strong> {{ $fullName }}
+                        </li>
+                        <li class="py-3">
+                            <strong>Mobile:</strong> {{ $mobile }}
+                        </li>
+                        <li class="py-3">
+                            <strong>Email:</strong> {{ $email }}
+                        </li>
+                        <li class="py-3">
+                            <strong>Description:</strong><br> {{ $bio }}
+                        </li>
+                    </ul>
+                </div>
+
             </ul>
         </div>
     </div>

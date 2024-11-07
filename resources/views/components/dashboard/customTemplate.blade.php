@@ -1,3 +1,8 @@
+<style>
+    .custom-template {
+        display: none;
+    }
+</style>
 <div class="custom-template">
     <div class="title">Settings</div>
     <div class="custom-content">
@@ -12,7 +17,7 @@
                     <button type="button" class="changeLogoHeaderColor" data-color="green"></button>
                     <button type="button" class="changeLogoHeaderColor" data-color="orange"></button>
                     <button type="button" class="changeLogoHeaderColor" data-color="red"></button>
-                    <button type="button" class="changeLogoHeaderColor" data-color="white"></button>
+                    {{-- <button type="button" class="changeLogoHeaderColor" data-color="white"></button> --}}
                     <br />
                     <button type="button" class="changeLogoHeaderColor" data-color="dark2"></button>
                     <button type="button" class="changeLogoHeaderColor" data-color="blue2"></button>
@@ -33,7 +38,7 @@
                     <button type="button" class="changeTopBarColor" data-color="green"></button>
                     <button type="button" class="changeTopBarColor" data-color="orange"></button>
                     <button type="button" class="changeTopBarColor" data-color="red"></button>
-                    <button type="button" class="changeTopBarColor" data-color="white"></button>
+                    {{-- <button type="button" class="changeTopBarColor" data-color="white"></button> --}}
                     <br />
                     <button type="button" class="changeTopBarColor" data-color="dark2"></button>
                     <button type="button" class="changeTopBarColor" data-color="blue2"></button>
@@ -47,7 +52,7 @@
             <div class="switch-block">
                 <h4>Sidebar</h4>
                 <div class="btnSwitch">
-                    <button type="button" class="changeSideBarColor" data-color="white"></button>
+                    {{-- <button type="button" class="changeSideBarColor" data-color="white"></button> --}}
                     <button type="button" class="changeSideBarColor" data-color="dark"></button>
                     <button type="button" class="changeSideBarColor" data-color="dark2"></button>
                 </div>
@@ -55,6 +60,6 @@
         </div>
     </div>
     <div class="custom-toggle">
-        <i class="icon-settings"></i>
+        <i class="fa-solid fa-gear"></i>
     </div>
 </div>

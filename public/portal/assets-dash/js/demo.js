@@ -51,24 +51,6 @@ window.addEventListener("load", function (event) {
     const myModal = new bootstrap.Modal("#modalShowcase");
     myModal.show();
 });
-
-// Notify
-$.notify(
-    {
-        icon: "icon-bell",
-        title: "Wesam Shaker",
-        message: `Welcome, Mr. Wissam Shaker`,
-    },
-    {
-        type: "secondary",
-        placement: {
-            from: "bottom",
-            align: "right",
-        },
-        time: 1000,
-    }
-);
-
 // Jsvectormap
 var world_map = new jsVectorMap({
     selector: "#world-map",
