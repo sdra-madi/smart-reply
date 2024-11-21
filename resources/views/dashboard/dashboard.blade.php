@@ -52,7 +52,7 @@
     </div>
 @endsection
 @props([
-    'fullName' => 'Wesam Shaker',
+    'fullName' => auth()->user()->name,
 ])
 @push('end_js')
     <script>

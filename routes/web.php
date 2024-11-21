@@ -1,13 +1,15 @@
 <?php
 
-use App\Http\Controllers\FacebookController;
-use App\Http\Controllers\portal\auth\LoginController;
-use App\Http\Controllers\portal\auth\RegisterController;
-use App\Http\Controllers\portal\auth\VerificationController;
-use App\Http\Controllers\portal\auth\PasswordResetController;
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\portal\auth\LoginController;
+use App\Http\Controllers\portal\auth\RegisterController;
+
+
+use App\Http\Controllers\portal\auth\VerificationController;
+use App\Http\Controllers\portal\facebook\FacebookController;
+use App\Http\Controllers\portal\auth\PasswordResetController;
+use App\Http\Controllers\portal\facebook\FacebookIndexController;
 
 Route::get('/welcome', function () {
     return view('welcome');
@@ -40,9 +42,6 @@ Route::middleware('guest')->group(function () {
     Route::post('/reset-password', [PasswordResetController::class, 'resetPassword'])->name('password.update');
 });
 
-// Route::get('/otp', function () {
-//     return view('portal.pages.otp');
-// });
 Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () {
 
     Route::get('/', function () {
@@ -53,5 +52,8 @@ Route::prefix('dashboard')->middleware(['auth', 'verified'])->group(function () 
         return view('dashboard.pages.profile');
     })->name('dashboard.profile');
 });
-Route::get('redirect/facebook', [FacebookController::class, 'RedirectToFacebook']);
-Route::get('callback/facebook', [FacebookController::class, 'HandleCallback']);
+Route::prefix('facebook')->middleware([])->group(function () {
+    Route::get('/redirect', [FacebookController::class, 'RedirectToFacebook'])->name('facebook.redirect');
+    Route::get('/callback', [FacebookController::class, 'HandleCallback']);
+    Route::get('/index', [FacebookIndexController::class, 'index'])->name('facebook.index');
+});

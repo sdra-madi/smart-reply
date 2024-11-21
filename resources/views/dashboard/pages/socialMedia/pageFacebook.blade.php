@@ -15,6 +15,7 @@
 
     <div style="margin:100px 0 0 0;">
         <h2 class="px-4">Facebook</h2>
+        <a href="{{ route('facebook.redirect') }}">Connect to Facebook</a>
         <x-dashboard.comp.pagesProfile.sectionProfile6 :projects="$projects" title="Pages"
             description="Project descriptions go here" />
 

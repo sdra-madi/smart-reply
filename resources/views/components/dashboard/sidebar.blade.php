@@ -50,13 +50,13 @@
                     <h4 class="text-section">Social Media</h4>
                 </li>
                 <li class="nav-item" data-id="facebook">
-                    <a href="{{ route('facebook') }}">
+                    <a href="{{ route('facebook.index') }}">
                         <i class="fa-brands fa-facebook-f"></i>
                         <p>Facebook</p>
                     </a>
                 </li>
                 <li class="nav-item" data-id="instagram">
-                    <a href="{{ route('instagram') }}">
+                    <a href="#">
                         <i class="fa-brands fa-instagram"></i>
                         <p>instagram</p>
                     </a>
@@ -68,7 +68,7 @@
                     <h4 class="text-section">Products</h4>
                 </li>
                 <li class="nav-item" data-id="products">
-                    <a href="{{ route('products') }}">
+                    <a href="#">
                         <i class="fa-brands fa-product-hunt"></i>
                         <p>Products</p>
                     </a>
@@ -80,7 +80,7 @@
                     <h4 class="text-section">Messenger</h4>
                 </li>
                 <li class="nav-item" data-id="whatsapp">
-                    <a href="{{ route('whatsapp') }}">
+                    <a href="#">
                         <i class="fa-brands fa-whatsapp"></i>
                         <p>Whatsapp</p>
                     </a>

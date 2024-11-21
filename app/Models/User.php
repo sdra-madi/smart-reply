@@ -50,4 +50,9 @@ class User extends Authenticatable  implements MustVerifyEmail
     {
         $this->attributes['password'] = Hash::make($password);
     }
+    public function FacebookAccounts()
+    {
+        return $this->hasMany(FacebookAccount::class);
+    }
+
 }

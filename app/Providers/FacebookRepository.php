@@ -2,41 +2,24 @@
 
 namespace App\Providers;
 
-use Facebook\Facebook;
+
 use Illuminate\Support\Facades\Http;
 
 class FacebookRepository
 {
     protected $facebook;
 
+   
     public function __construct()
     {
-        $this->facebook = new Facebook([
-            'app_id' => env('FACEBOOK_APP_ID'),
-            'app_secret' => env('FACEBOOK_APP_SECRET'),
-            'default_graph_version' => env('FACEBOOK_DEFAULT_GRAPH_VERSION')
-        ]);
+       
     }
-
+    // This function handles the process of redirecting the user to Facebook for authentication.  
     public function redirectTo()
     {
-        $helper = $this->facebook->getRedirectLoginHelper();
-        $permissions = [
-            'email',
-            'public_profile',
-            'pages_manage_engagement',
-            'pages_read_user_content',
-            'pages_manage_posts',
-            'read_insights',
-            'pages_manage_metadata',
-            'pages_read_engagement',
-            'pages_show_list',
-            'pages_messaging',
-            'business_management',
-        ];
-
-        $redirectUri = env('FACEBOOK_CALLBACK');
-        return $helper->getLoginUrl($redirectUri, $permissions);
+       // return $helper->getLoginUrl($redirectUri, $permissions);
+        // Step 5: Redirect the user to the generated Facebook login URL.
+        // When the user clicks the button, they will be taken to Facebook to authenticate and grant permissions.
     }
 
     public function handleCallback($request)
@@ -94,5 +77,4 @@ class FacebookRepository
             return $error;
         }
     }
-
 }
