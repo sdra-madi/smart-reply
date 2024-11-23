@@ -1,9 +1,10 @@
+# Use the official PHP image with FPM
 FROM php:8.2-fpm
 
-# Set working directory
+# Set the working directory inside the container
 WORKDIR /var/www/html
 
-# Install dependencies
+# Install required system dependencies
 RUN apt-get update && apt-get install -y \
     libpng-dev \
     libjpeg-dev \
@@ -11,19 +12,36 @@ RUN apt-get update && apt-get install -y \
     zip \
     unzip \
     git \
-    curl
+    curl \
+    libpq-dev
 
-# Install Composer
+# Install PHP extensions
+RUN docker-php-ext-install pdo_pgsql \
+    && docker-php-ext-configure gd --with-freetype --with-jpeg \
+    && docker-php-ext-install gd
+
+# Install Composer globally
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-# Copy project files
+# Copy project files into the container
 COPY . /var/www/html
 
-# Install PHP dependencies
+# Ensure the storage and bootstrap/cache directories are writable
+RUN chmod -R 775 storage bootstrap/cache \
+    && chown -R www-data:www-data storage bootstrap/cache
+
+# Install PHP dependencies (Laravel packages)
 RUN composer install --no-dev --optimize-autoloader
+
+# Cache Laravel config and routes (optional but improves performance)
+RUN php artisan config:cache \
+    && php artisan route:cache \
+    && php artisan view:cache
 
 # Expose the application on port 8000
 EXPOSE 8000
 
-# Start Laravel
+# Start the Laravel application
 CMD php artisan serve --host=0.0.0.0 --port=8000
+
+
