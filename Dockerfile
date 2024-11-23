@@ -33,11 +33,6 @@ RUN chmod -R 775 storage bootstrap/cache \
 # Install PHP dependencies (Laravel packages)
 RUN composer install --no-dev --optimize-autoloader
 
-# Cache Laravel config and routes (optional but improves performance)
-RUN php artisan config:cache \
-    && php artisan route:cache \
-    && php artisan view:cache
-
 # Expose the application on port 8000
 EXPOSE 8000
 
